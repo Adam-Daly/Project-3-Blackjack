@@ -72,6 +72,17 @@ class Player:
             # Print the player's hand and score
             print(f"Your hand: {[str(card) for card in self.hand]}")
             print(f"Your score: {self.get_score()}")
+            # Ask the player what action they want to take
+            action = input("Hit, Stand, or Double Down? \n").lower()
+            # If the player chooses to hit, add a new card to their hand
+            #  and check if they busted
+            if action == "hit":
+                self.add_card(game.deck.deal())
+                score = self.get_score()
+                if score > 21:
+                    # If the player busted, end the turn
+                    print(f"Bust! Your score is {score}")
+                    break            
 
 class Dealer:
 
