@@ -197,5 +197,7 @@ class Game:
             # give bet amount back
             game.player.money += game.player.bet_amount
 
+        # display the updated wins, losses and money
+        print(f"Wins: {self.wins}, Losses: {self.losses}, Money: {game.player.money}")
 
 # main loop
