@@ -201,3 +201,10 @@ class Game:
         print(f"Wins: {self.wins}, Losses: {self.losses}, Money: {game.player.money}")
 
 # main loop
+while True:
+    # initilize a new instance of the Game class, run the game loop
+    # and ask if the player wants to play again
+    starting_money = 1000
+    player = Player(starting_money)
+    game = Game()
+    print("Welcome to Blackjack!")
