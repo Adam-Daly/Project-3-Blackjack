@@ -125,6 +125,20 @@ class Dealer:
     def __init__(self):
         self.hand = []
 
+    # Add a card to the dealer's hand
+    def add_card(self, card):
+        self.hand.append(card)
+
+    # Calculate the score of the dealer's hand
+    def get_score(self):
+        score = sum(card.value for card in self.hand)
+        # If the dealer has an ace and their score is over 21,
+        # treat the ace as a 1 instead of 11
+        if score > 21:
+            for card in self.hand:
+                if card.rank == 'Ace' and score > 21:
+                    score -= 10
+        return score
 
 class Game:
 
