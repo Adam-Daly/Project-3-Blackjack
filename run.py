@@ -64,6 +64,15 @@ class Player:
             except ValueError:
                 print("Please enter a valid bet amount.")
 
+    # ask the player what action they want to take (hit, stand, or double down)
+    # and perform the appropriate action
+    def turn(self):
+        # Keep looping until the player chooses to stand or bust
+        while True:
+            # Print the player's hand and score
+            print(f"Your hand: {[str(card) for card in self.hand]}")
+            print(f"Your score: {self.get_score()}")
+
 class Dealer:
 
 
