@@ -174,4 +174,28 @@ class Game:
         self.dealer.turn()
         self.end()
 
+    # determine the winner of the game and update wins and losses accordingly
+    def end(self):
+        player_score = self.player.get_score()
+        dealer_score = self.dealer.get_score()
+        if player_score > 21:
+            print("You busted!")
+            self.losses += 1
+        elif dealer_score > 21:
+            print("Dealer busted!")
+            self.wins += 1
+            game.player.money += game.player.bet_amount * 2
+        elif player_score > dealer_score:
+            print("You win!")
+            self.wins += 1
+            game.player.money += game.player.bet_amount * 2
+        elif dealer_score > player_score:
+            print("Dealer wins!")
+            self.losses += 1
+        else:
+            print("It's a tie!")
+            # give bet amount back
+            game.player.money += game.player.bet_amount
+
+
 # main loop
