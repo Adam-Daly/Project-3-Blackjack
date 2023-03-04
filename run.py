@@ -121,6 +121,9 @@ class Player:
 
 
 class Dealer:
+    # Initialize an empty hand for the dealer
+    def __init__(self):
+        self.hand = []
 
 
 class Game:
