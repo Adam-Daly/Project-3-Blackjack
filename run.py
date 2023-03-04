@@ -50,6 +50,20 @@ class Player:
     def add_card(self, card):
        return score
 
+    # ask the player how much they want to bet
+    # and keep asking until they enter a valid bet amount
+    def bet(self):
+        while True:
+            try:
+                self.bet_amount = int(input(f"You have {self.money} dollars. How much would you like to bet? \n"))
+                if self.bet_amount > self.money:
+                    print("You can't bet more than you have!")
+                else:
+                    self.money -= self.bet_amount
+                    break
+            except ValueError:
+                print("Please enter a valid bet amount.")
+
 class Dealer:
 
 
