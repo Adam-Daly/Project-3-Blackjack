@@ -140,6 +140,19 @@ class Dealer:
                     score -= 10
         return score
 
+    # Dealer takes their turn
+    def turn(self):
+        # Dealer must hit if their score is less than 17
+        while self.get_score() < 17:
+            self.add_card(game.deck.deal())
+        print(f"Dealer's hand: {[str(card) for card in self.hand]}")
+        print(f"Dealer's score: {self.get_score()}")
+
+    # Reset the dealer's hand
+    def reset_hand(self):
+        self.hand = []
+
+
 class Game:
 
 
