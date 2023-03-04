@@ -48,7 +48,16 @@ class Player:
 
     # add a card to the player's hand
     def add_card(self, card):
-       return score
+        self.hand.append(card)
+
+    # calculate the score of the player's hand, accounting for aces
+    def get_score(self):
+        score = sum(card.value for card in self.hand)
+        if score > 21:
+            for card in self.hand:
+                if card.rank == 'Ace' and score > 21:
+                    score -= 10
+        return score
 
     # ask the player how much they want to bet
     # and keep asking until they enter a valid bet amount
@@ -109,14 +118,6 @@ class Player:
     # reset the player's hand
     def reset_hand(self):
         self.hand = [] self.hand.append(card)
-
-    # calculate the score of the player's hand, accounting for aces
-    def get_score(self):
-        score = sum(card.value for card in self.hand)
-        if score > 21:
-            for card in self.hand:
-                if card.rank == 'Ace' and score > 21:
-                    score -= 10
 
 
 class Dealer:
