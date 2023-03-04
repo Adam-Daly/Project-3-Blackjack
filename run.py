@@ -46,6 +46,10 @@ class Player:
         self.money = starting_money
         self.bet_amount = 0
 
+    # add a card to the player's hand
+    def add_card(self, card):
+       return score
+
 class Dealer:
 
 
