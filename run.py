@@ -215,7 +215,7 @@ while True:
     player = Player(starting_money)
     game = Game()
     print("Welcome to Blackjack!")
-        while True:
+    while True:
         game.start()
         # check if the player still has money
         if game.player.money <= 0:
