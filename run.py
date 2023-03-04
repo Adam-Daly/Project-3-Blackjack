@@ -208,3 +208,5 @@ while True:
     player = Player(starting_money)
     game = Game()
     print("Welcome to Blackjack!")
+        while True:
+        game.start()
