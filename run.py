@@ -83,6 +83,29 @@ class Player:
                     # If the player busted, end the turn
                     print(f"Bust! Your score is {score}")
                     break            
+            # If the player chooses to stand, end the turn
+            elif action == "stand":
+                break
+            # If the player chooses to double down, add a new card to their hand
+            # and double their bet
+            elif action == "double down":
+                if self.money < self.bet_amount:
+                    print("You don't have enough money to double down!")
+                else:
+                    # Double the player's bet
+                    # and deduct the additional bet from their money
+                    self.money -= self.bet_amount
+                    self.bet_amount *= 2
+                    # Add a new card to the player's hand
+                    # and check if they busted
+                    self.add_card(game.deck.deal())
+                    score = self.get_score()
+                    if score > 21:
+                        print(f"Bust! Your score is {score}")
+                        break
+            else:
+                print("Invalid action, please try again.")
+
 
 class Dealer:
 
