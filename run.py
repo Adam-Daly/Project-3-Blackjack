@@ -162,4 +162,16 @@ class Game:
         self.wins = 0
         self.losses = 0
 
+    # shuffle the deck, let the player make a bet, deal cards to the player and
+    # dealer, and let the player take their turn
+    def start(self):
+        self.deck.shuffle()
+        self.player.bet()
+        self.player.reset_hand()
+        self.dealer.reset_hand()
+        self.deal()
+        self.player.turn()
+        self.dealer.turn()
+        self.end()
+
 # main loop
