@@ -13,6 +13,9 @@ class Card:
         else:
             self.value = int(rank)
 
+    def __str__(self):
+        # Returns a string representation of the card
+        return f"{self.rank} of {self.suit}"
            
 class Deck:
     # Initializes the deck with 52 cards, each having a rank and suit
