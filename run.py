@@ -40,7 +40,11 @@ class Deck:
 
 
 class Player:        
-
+    # initialize the hand, money, and bet_amount
+    def __init__(self, starting_money):
+        self.hand = []
+        self.money = starting_money
+        self.bet_amount = 0
 
 class Dealer:
 
