@@ -210,3 +210,10 @@ while True:
     print("Welcome to Blackjack!")
         while True:
         game.start()
+        if game.player.money <= 0:
+            print("You're out of money! Game over.")
+            break
+        # ask if the player would like to play again and store as lower case
+        play_again = input("Play again? (y/n) \n").lower()
+        if play_again != "y":
+            break
