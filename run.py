@@ -174,6 +174,13 @@ class Game:
         self.dealer.turn()
         self.end()
 
+    # deal two cards to the player and two cards to the dealer   
+    def deal(self):	
+        self.player.add_card(self.deck.deal())	
+        self.dealer.add_card(self.deck.deal())	
+        self.player.add_card(self.deck.deal())	
+        self.dealer.add_card(self.deck.deal())	
+
     # determine the winner of the game and update wins and losses accordingly
     def end(self):
         player_score = self.player.get_score()
