@@ -27,6 +27,15 @@ class Deck:
             for suit in suits:
                 self.cards.append(Card(rank, suit))
 
+    def shuffle(self):
+        # Shuffles the deck in a random order
+        random.shuffle(self.cards)
+
+    def deal(self):
+        # Removes and returns the top card from the deck
+        return self.cards.pop()
+
+
 class Player:        
 
 
