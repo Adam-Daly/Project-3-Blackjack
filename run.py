@@ -110,6 +110,15 @@ class Player:
     def reset_hand(self):
         self.hand = [] self.hand.append(card)
 
+    # calculate the score of the player's hand, accounting for aces
+    def get_score(self):
+        score = sum(card.value for card in self.hand)
+        if score > 21:
+            for card in self.hand:
+                if card.rank == 'Ace' and score > 21:
+                    score -= 10
+
+
 class Dealer:
 
 
