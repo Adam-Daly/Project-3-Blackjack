@@ -106,6 +106,9 @@ class Player:
             else:
                 print("Invalid action, please try again.")
 
+    # reset the player's hand
+    def reset_hand(self):
+        self.hand = [] self.hand.append(card)
 
 class Dealer:
 
