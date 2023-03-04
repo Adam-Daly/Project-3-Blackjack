@@ -154,6 +154,12 @@ class Dealer:
 
 
 class Game:
-
+    # initialize the player, dealer, deck, wins, and losses
+    def __init__(self):
+        self.player = Player(starting_money)
+        self.dealer = Dealer()
+        self.deck = Deck()
+        self.wins = 0
+        self.losses = 0
 
 # main loop
