@@ -15,7 +15,17 @@ class Card:
 
            
 class Deck:
-
+    # Initializes the deck with 52 cards, each having a rank and suit
+    def __init__(self):
+        ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+        suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+        self.cards = []
+        # Initialize the deck of cards by iterating over each possible
+        # combination of rank and suit and creating a new Card object for
+        # each combination, which is then added to the self.cards list.
+        for rank in ranks:
+            for suit in suits:
+                self.cards.append(Card(rank, suit))
 
 class Player:        
 
